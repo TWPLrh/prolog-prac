@@ -1,7 +1,7 @@
 path(X, Y) :- path(X, Y, []).
 path(X, Y, _) :- edge(X, Y) -> writeln('Yes').
 path(X, Y, V) :- \+ member(X, V), edge(X, Z), path(Z, Y, [X|V]).
-path(X, Y, []) :- writeln('No.').
+path(X, Y, []) :- writeln('No.'), X is X, Y is Y.
 
 do_list(N, L) :-
         findall(Num, between(1, N, Num), L). 
